@@ -180,8 +180,8 @@ export default function Booking() {
   const { hotelId } = useParams();
 
   useEffect(() => {
-    // if (hotelId) {
-      axios.get(`https://hms-backend-1-1.onrender.com/booking/get/${hotelId}`)
+    if (hotelId) {
+      axios.get(`https://hms-backend-1-1.onrender.com/booking/get?hotelId=${hotelId}`)
         .then((res) => {
           console.log(res.data);
           setBooking(res.data);
@@ -189,7 +189,7 @@ export default function Booking() {
         .catch((err) => {
           console.log(err);
         });
-    // }
+    }
   }, [hotelId]);
 
   const handleAddToCart = async (e) => {
@@ -201,7 +201,7 @@ export default function Booking() {
     }
 
     try {
-      const response = await axios.post(`https://hms-backend-1-1.onrender.com.booking/add`, {
+      const response = await axios.post(`https://hms-backend-1-1.onrender.com/booking/add`, {
         hotelId, // Associate booking with the current hotel
         persons: parseInt(persons, 10),
         roomno: parseInt(room, 10),
