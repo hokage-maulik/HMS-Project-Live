@@ -293,7 +293,7 @@ export default function Booking() {
             <p><strong>Persons:</strong> {el.persons}</p>
             <p><strong>Email:</strong> {el.email}</p>
             <p><strong>Phone:</strong> {el.phone}</p>
-            {/* <p><strong>Hotel Name:</strong> {el.hotelId.name}</p> */}
+             <p><strong>Hotel Name:</strong> {el.hotelId.name}</p> 
           </li>
         ))}
       </ul>
